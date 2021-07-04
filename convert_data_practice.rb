@@ -31,11 +31,38 @@ p new_hash
 #  3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
 #     For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
 
+word = "bookkeeper"
+frequency = {}
+index = 0
+
+while index < word.length
+  key = word[index]
+  value = word.count(word[index])
+  frequency[key] = value
+  index += 1
+end
+
+p frequency
+
 #  4. Convert a hash into an array of arrays.
 #     For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
 
+items_hash = { "chair" => 100, "book" => 14 }
+items_array = []
+index = 0
+
+items_hash.each do |item, price|
+  items_array << [item, price]
+end
+
+p items_array
+
 #  5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #     For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
+people = { 321 => { name: "Alice", age: 31 }, 322 => { name: "Maria", age: 27 } }
+convert = {}
+index = 0
 
 #  6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #     For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
